@@ -18,42 +18,45 @@ namespace UnmanagedThreadUtils.Tests
         [Test]
         public void TestThreadExitFiresWhenEnabled([Values(true, false)] bool enableThreadExitCallback)
         {
-            var evt = new ManualResetEventSlim();
-            var threadLocalVal = new IntPtr(42);
-            var resultThreadLocalVal = IntPtr.Zero;
-
-            UnmanagedThread.ThreadExitCallback callback = val =>
+            using (var evt = new ManualResetEventSlim())
             {
-                evt.Set();
-                resultThreadLocalVal = val;
-            };
+                var threadLocalVal = new IntPtr(42);
+                var resultThreadLocalVal = IntPtr.Zero;
 
-            GC.KeepAlive(callback);
-            var callbackId = UnmanagedThread.SetThreadExitCallback(Marshal.GetFunctionPointerForDelegate(callback));
-
-            try
-            {
-                ParameterizedThreadStart threadStart = _ =>
+                UnmanagedThread.ThreadExitCallback callback = val =>
                 {
-                    if (enableThreadExitCallback)
-                    {
-                        UnmanagedThread.EnableCurrentThreadExitEvent(callbackId, threadLocalVal);
-                    }
+                    // ReSharper disable once AccessToDisposedClosure
+                    evt.Set();
+                    resultThreadLocalVal = val;
                 };
 
-                var t = new Thread(threadStart);
+                GC.KeepAlive(callback);
+                var callbackId = UnmanagedThread.SetThreadExitCallback(Marshal.GetFunctionPointerForDelegate(callback));
 
-                t.Start();
-                t.Join();
+                try
+                {
+                    ParameterizedThreadStart threadStart = _ =>
+                    {
+                        if (enableThreadExitCallback)
+                        {
+                            UnmanagedThread.EnableCurrentThreadExitEvent(callbackId, threadLocalVal);
+                        }
+                    };
 
-                var threadExitCallbackCalled = evt.Wait(TimeSpan.FromSeconds(1));
+                    var t = new Thread(threadStart);
 
-                Assert.AreEqual(enableThreadExitCallback, threadExitCallbackCalled);
-                Assert.AreEqual(enableThreadExitCallback ? threadLocalVal : IntPtr.Zero, resultThreadLocalVal);
-            }
-            finally
-            {
-                UnmanagedThread.RemoveThreadExitCallback(callbackId);
+                    t.Start();
+                    t.Join();
+
+                    var threadExitCallbackCalled = evt.Wait(TimeSpan.FromSeconds(1));
+
+                    Assert.AreEqual(enableThreadExitCallback, threadExitCallbackCalled);
+                    Assert.AreEqual(enableThreadExitCallback ? threadLocalVal : IntPtr.Zero, resultThreadLocalVal);
+                }
+                finally
+                {
+                    UnmanagedThread.RemoveThreadExitCallback(callbackId);
+                }
             }
         }
 
