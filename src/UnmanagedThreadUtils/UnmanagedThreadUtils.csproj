@@ -6,4 +6,20 @@
     <CodeAnalysisRuleSet>..\..\UnmanagedThreadUtils.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>UnmanagedThreadUtils</PackageId>
+    <Description>Provides a way to subscribe to a Thread Exit event</Description>
+    <PackageProjectUrl>https://github.com/ptupitsyn/UnmanagedThreadUtils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ptupitsyn/UnmanagedThreadUtils.git</RepositoryUrl>
+    <Version>1.0.0</Version>
+    <Authors>Pavel Tupitsyn</Authors>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageTags>Thread;Threading;Multithreading;Unmanaged;Exit;Callback;Utils;pthread;threadlocal;pthread_key_create</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+
 </Project>
