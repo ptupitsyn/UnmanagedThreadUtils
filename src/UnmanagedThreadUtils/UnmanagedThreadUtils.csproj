@@ -6,4 +6,10 @@
     <CodeAnalysisRuleSet>..\..\UnmanagedThreadUtils.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>UnmanagedThreadUtils</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Pavel Tupitsyn</Authors>
+  </PropertyGroup>
+
 </Project>
