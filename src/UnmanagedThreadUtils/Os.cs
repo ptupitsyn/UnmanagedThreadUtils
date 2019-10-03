@@ -1,42 +1,34 @@
-using System;
-
 namespace UnmanagedThreadUtils
 {
+    using System.Runtime.InteropServices;
+
     /// <summary>
-    /// Operating system / platform detector.
+    /// OS helper.
     /// </summary>
     internal static class Os
     {
         /// <summary>
-        /// Initializes the <see cref="Os"/> class.
+        /// Initializes static members of the <see cref="Os"/> class.
         /// </summary>
         static Os()
         {
-            var platform = Environment.OSVersion.Platform;
-
-            IsLinux = platform == PlatformID.Unix
-                      || platform == PlatformID.MacOSX
-                      || (int) Environment.OSVersion.Platform == 128;
-
-            IsWindows = platform == PlatformID.Win32NT
-                        || platform == PlatformID.Win32S
-                        || platform == PlatformID.Win32Windows;
-
-            IsMacOs = IsLinux && Shell.BashExecute("uname").Contains("Darwin");
+            IsLinux = RuntimeInformation.IsOSPlatform(OSPlatform.Linux);
+            IsWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+            IsMacOs = RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
         }
 
         /// <summary>
-        /// Windows.
+        /// Gets a value indicating whether current OS is Windows.
         /// </summary>
         public static bool IsWindows { get; }
 
         /// <summary>
-        /// Linux.
+        /// Gets a value indicating whether current OS is Linux.
         /// </summary>
         public static bool IsLinux { get; }
 
         /// <summary>
-        /// MacOs.
+        /// Gets a value indicating whether current OS is macOS.
         /// </summary>
         public static bool IsMacOs { get; }
     }
