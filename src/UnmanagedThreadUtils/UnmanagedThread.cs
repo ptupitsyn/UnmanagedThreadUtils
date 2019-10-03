@@ -1,11 +1,12 @@
 ﻿namespace UnmanagedThreadUtils
 {
     using System;
-    using System.Diagnostics;
     using System.Runtime.InteropServices;
     using UnmanagedThreadUtils.NativeMethods;
 
-    // TODO: Separate class to manage thread-local storage, and this class builds on top of it.
+    /// <summary>
+    /// Unmanaged thread utils.
+    /// </summary>
     public static class UnmanagedThread
     {
         /// <summary>
@@ -20,9 +21,13 @@
         /// <param name="callbackPtr">
         /// Pointer to a callback function that matches <see cref="ThreadExitCallback"/>.
         /// </param>
+        /// <returns>Callback ID.</returns>
         public static unsafe int SetThreadExitCallback(IntPtr callbackPtr)
         {
-            Debug.Assert(callbackPtr != IntPtr.Zero);
+            if (callbackPtr == IntPtr.Zero)
+            {
+                throw new ArgumentException("Should not be Zero", nameof(callbackPtr));
+            }
 
             if (Os.IsWindows)
             {
@@ -94,9 +99,14 @@
         /// <summary>
         /// Enables thread exit event for current thread.
         /// </summary>
+        /// <param name="callbackId">Callback ID from <see cref="SetThreadExitCallback"/>.</param>
+        /// <param name="threadLocalValue">Thread-local value to be passed to the callback.</param>
         public static void EnableCurrentThreadExitEvent(int callbackId, IntPtr threadLocalValue)
         {
-            Debug.Assert(threadLocalValue != IntPtr.Zero);
+            if (threadLocalValue == IntPtr.Zero)
+            {
+                throw new ArgumentException("Should not be Zero", nameof(threadLocalValue));
+            }
 
             // Store any value so that destructor callback is fired.
             if (Os.IsWindows)

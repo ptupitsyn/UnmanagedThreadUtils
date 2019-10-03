@@ -1,10 +1,10 @@
-using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.InteropServices;
-
 namespace UnmanagedThreadUtils.NativeMethods
 {
-    public class NativeMethodsWindows
+    using System;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Runtime.InteropServices;
+
+    internal static class NativeMethodsWindows
     {
         // ReSharper disable once InconsistentNaming
         public const int FLS_OUT_OF_INDEXES = -1;

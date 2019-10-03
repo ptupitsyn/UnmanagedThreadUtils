@@ -1,10 +1,10 @@
-using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.InteropServices;
-
 namespace UnmanagedThreadUtils.NativeMethods
 {
-    public class NativeMethodsLinux
+    using System;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Runtime.InteropServices;
+
+    internal class NativeMethodsLinux
     {
         [SuppressMessage("Microsoft.Design", "CA1060:MovePInvokesToNativeMethodsClass", Justification = "Reviewed.")]
         [DllImport("libcoreclr.so")]
