@@ -18,20 +18,6 @@
         /// <summary>
         /// Sets the thread exit callback, and returns an id to pass to <see cref="EnableCurrentThreadExitEvent"/>.
         /// </summary>
-        /// <param name="callback">
-        /// Callback delegate.
-        /// </param>
-        /// <returns>Callback ID.</returns>
-        public static int SetThreadExitCallback(ThreadExitCallback callback)
-        {
-            var handle = GCHandle.Alloc(callback);
-
-            return SetThreadExitCallback(GCHandle.ToIntPtr(handle));
-        }
-
-        /// <summary>
-        /// Sets the thread exit callback, and returns an id to pass to <see cref="EnableCurrentThreadExitEvent"/>.
-        /// </summary>
         /// <param name="callbackPtr">
         /// Pointer to a callback function that matches <see cref="ThreadExitCallback"/>.
         /// </param>
