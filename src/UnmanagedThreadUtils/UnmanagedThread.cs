@@ -2,7 +2,7 @@
 {
     using System;
     using System.Runtime.InteropServices;
-    using UnmanagedThreadUtils.NativeMethods;
+    using NativeMethods;
 
     /// <summary>
     /// Unmanaged thread utils.
@@ -12,7 +12,7 @@
         /// <summary>
         /// Delegate for <see cref="SetThreadExitCallback"/>.
         /// </summary>
-        /// <param name="threadLocalValue">Value from <see cref="EnableCurrentThreadExitEvent"/></param>
+        /// <param name="threadLocalValue">Value from <see cref="EnableCurrentThreadExitEvent"/>.</param>
         public delegate void ThreadExitCallback(IntPtr threadLocalValue);
 
         /// <summary>

@@ -4,7 +4,6 @@
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <WarningsAsErrors/>
         <LangVersion>latest</LangVersion>
-        <CodeAnalysisRuleSet>UnmanagedThreadUtils.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.5" />
