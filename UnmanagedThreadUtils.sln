@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnmanagedThreadUtils", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnmanagedThreadUtils.Tests", "tests\UnmanagedThreadUtils.Tests\UnmanagedThreadUtils.Tests.csproj", "{2DAD2005-9915-497E-8721-957BF409D7C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnmanagedThreadUtils.Examples", "examples\UnmanagedThreadUtils.Examples\UnmanagedThreadUtils.Examples.csproj", "{7F100EC4-A38C-4B09-9735-D59C661CA368}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{2DAD2005-9915-497E-8721-957BF409D7C8}.Release|x64.Build.0 = Release|Any CPU
 		{2DAD2005-9915-497E-8721-957BF409D7C8}.Release|x86.ActiveCfg = Release|Any CPU
 		{2DAD2005-9915-497E-8721-957BF409D7C8}.Release|x86.Build.0 = Release|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Debug|x64.Build.0 = Debug|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Debug|x86.Build.0 = Debug|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Release|x64.ActiveCfg = Release|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Release|x64.Build.0 = Release|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Release|x86.ActiveCfg = Release|Any CPU
+		{7F100EC4-A38C-4B09-9735-D59C661CA368}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
