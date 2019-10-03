@@ -1,12 +1,12 @@
-﻿using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using UnmanagedThreadUtils.NativeMethods;
-
-namespace UnmanagedThreadUtils
+﻿namespace UnmanagedThreadUtils
 {
+    using System;
+    using System.Diagnostics;
+    using System.Runtime.InteropServices;
+    using UnmanagedThreadUtils.NativeMethods;
+
     // TODO: Separate class to manage thread-local storage, and this class builds on top of it.
-    public class UnmanagedThread
+    public static class UnmanagedThread
     {
         /// <summary>
         /// Delegate for <see cref="SetThreadExitCallback"/>.
