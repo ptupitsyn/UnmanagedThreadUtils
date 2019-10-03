@@ -20,6 +20,8 @@
         /// </summary>
         /// <param name="callbackPtr">
         /// Pointer to a callback function that matches <see cref="ThreadExitCallback"/>.
+        /// Get this pointer with <see cref="Marshal.GetFunctionPointerForDelegate"/> method; make sure that passed
+        /// delegate is not garbage-collected (put it to a static property, for example).
         /// </param>
         /// <returns>Callback ID.</returns>
         public static unsafe int SetThreadExitCallback(IntPtr callbackPtr)
