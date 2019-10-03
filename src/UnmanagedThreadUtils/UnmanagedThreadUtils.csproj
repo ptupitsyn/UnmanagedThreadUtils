@@ -12,6 +12,7 @@
     <Authors>Pavel Tupitsyn</Authors>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageTags>Thread;Threading;Multithreading;Unmanaged;Exit;Callback;Utils;pthread;threadlocal;pthread_key_create</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
