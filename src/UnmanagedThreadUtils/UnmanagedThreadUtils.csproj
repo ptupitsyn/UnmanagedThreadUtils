@@ -8,6 +8,9 @@
 
   <PropertyGroup>
     <PackageId>UnmanagedThreadUtils</PackageId>
+    <Description>Provides a way to subscribe to a Thread Exit event</Description>
+    <PackageProjectUrl>https://github.com/ptupitsyn/UnmanagedThreadUtils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ptupitsyn/UnmanagedThreadUtils.git</RepositoryUrl>
     <Version>1.0.0</Version>
     <Authors>Pavel Tupitsyn</Authors>
     <PackageIcon>icon.png</PackageIcon>
