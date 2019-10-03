@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="CAFlow Rules"  ToolsVersion="10.0">
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+	<!-- Do not directly await a Task without calling ConfigureAwait: Not needed in ASP.NET Core, there is no SynchronizationContext. -->
+    <Rule Id="CA2007" Action="None" />
+
+	<!-- Instantiate argument exceptions correctly -->
+    <Rule Id="CA2208" Action="None" />
+
+	<!-- Collection properties should be read only -->
+    <Rule Id="CA2227" Action="None" />
+
+	<!-- URI parameters should not be strings -->
+    <Rule Id="CA1054" Action="None" />
+
+	<!-- URI properties should not be strings -->
+    <Rule Id="CA1056" Action="None" />
+
+	<!-- Identifiers should not contain underscores: needed for API versioning -->
+	<Rule Id="CA1707" Action="None" />
+
+	<!-- Internal class that is apparently never instantiated: valid case for modular architecture with DI -->
+	<Rule Id="CA1812" Action="None" />
+	
+	<!-- Use properties where appropriate -->
+	<Rule Id="CA1024" Action="None" />
+
+	<!-- Use ordinal StringComparison -->
+	<Rule Id="CA1309" Action="None" />
+
+	<!-- Use ordinal StringComparison -->
+	<Rule Id="CA1309" Action="None" />
+
+	<!-- Do not catch general exception type -->
+	<Rule Id="CA1031" Action="None" />
+
+	<!-- StyleCop rules -->
+
+	<!-- The file header is missing or not located at the top of the file -->
+    <Rule Id="SA1633" Action="None" />
+
+    <!-- Prefix local calls with this -->
+    <Rule Id="SA1101" Action="None" />
+
+    <!-- Enable XML documentation output -->
+    <Rule Id="SA1652" Action="None" />
+
+    <!-- Closing parenthesis must not be preceded by a space -->
+    <Rule Id="SA1009" Action="None" />
+
+    <!-- Field must not begin with an underscore -->
+    <Rule Id="SA1309" Action="None" />
+
+    <!-- Arithmetic expressions must declare precedence -->
+    <Rule Id="SA1407" Action="None" />
+
+    <!-- Operator must not be followed by whitespace -->
+    <Rule Id="SA1003" Action="None" />
+
+    <!-- Opening parenthesis must not be preceded by a space -->
+    <Rule Id="SA1008" Action="None" />
+	
+    <!-- Code must not contain trailing whitespace -->
+    <Rule Id="SA1028" Action="None" />
+	
+    <!-- Statement must not contain unnecessary parenthesis -->
+    <Rule Id="SA1119" Action="None" />
+	
+    <!-- Property documentation must have value -->
+    <Rule Id="SA1609" Action="None" />
+
+    <!-- Do not use Hungarian notation (many false positives) -->
+    <Rule Id="SA1305" Action="None" />
+
+    <!-- Using directive should be qualified -->
+    <Rule Id="SA1135" Action="None" />
+
+    <!-- Use trailing comma in multi-line initializers -->
+    <Rule Id="SA1413" Action="None" />
+
+    <!-- XML comment analysis is disabled -->
+    <Rule Id="SA0001" Action="None" />
+
+	<!-- Roslynator -->
+	
+	<!-- Asynchronous method name should end with 'Async' -->
+	<Rule Id="RCS1046" Action="Error" />
+	
+	<!-- Use 'var' instead of explicit type (when the type is obvious) -->
+	<Rule Id="RCS1010" Action="Error" />
+	
+	<!-- Use predefined type -->
+	<Rule Id="RCS1013" Action="Error" />
+	
+	<!-- Use StringComparison -->
+	<Rule Id="RCS1155" Action="None" />
+
+    <!-- Use line feed -->
+    <Rule Id="RCS1086" Action="None" />
+
+    <!-- Avoid value type boxing -->
+    <Rule Id="RCS1198" Action="None" />
+
+  </Rules>
+</RuleSet>
