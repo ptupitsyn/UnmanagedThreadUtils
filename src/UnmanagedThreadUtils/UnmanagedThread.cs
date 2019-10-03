@@ -5,6 +5,7 @@ using UnmanagedThreadUtils.NativeMethods;
 
 namespace UnmanagedThreadUtils
 {
+    // TODO: Separate class to manage thread-local storage, and this class builds on top of it.
     public class UnmanagedThread
     {
         /// <summary>
