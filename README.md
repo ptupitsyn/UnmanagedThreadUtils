@@ -2,7 +2,7 @@
 Unmanaged thread utils for .NET
 
 [![Build Status](https://travis-ci.com/ptupitsyn/UnmanagedThreadUtils.svg?branch=master)](https://travis-ci.com/ptupitsyn/UnmanagedThreadUtils)
-![Nuget](https://img.shields.io/nuget/v/UnmanagedThreadUtils)
+[![Nuget](https://img.shields.io/nuget/v/UnmanagedThreadUtils)](https://www.nuget.org/packages/UnmanagedThreadUtils/)
 
 ## Thread Exit Callback
 
