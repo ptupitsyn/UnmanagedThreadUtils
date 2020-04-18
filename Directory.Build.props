@@ -4,8 +4,8 @@
         <WarningsAsErrors/>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
-    <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.5" />
-        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.5" PrivateAssets="All" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118"  PrivateAssets="All" />
     </ItemGroup>
 </Project>
